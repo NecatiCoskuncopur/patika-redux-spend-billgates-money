@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { styled } from './stitches.config';
 
-function App() {
+import {
+  Header,
+  Balance,
+  Products,
+  Receipt,
+  Footer
+} from './components';
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Container>
+      <Header />
+      <Balance />
+      <Products />
+      <Receipt />
+      <Footer />
+    </Container>
+
   );
 }
 
-export default App;
+
+const Container = styled('main', {
+  maxWidth: '1000px',
+  mx: 'auto',
+  color: '$dark',
+  pb: '$4'
+})
